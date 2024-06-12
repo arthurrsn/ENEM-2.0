@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat com Gemini</title>
+</head>
+<body>
+    <h1>Faça sua pergunta ao Gemini:</h1>
+    <form method="POST">
+        <label for="pergunta">Pergunta:</label><br>
+        <input type="text" id="pergunta" name="pergunta"><br><br>
+
+        <label for="modelo">Modelo de Reformulação:</label><br>
+        <select id="modelo" name="modelo">
+            <option value="Reformulação Direta">Reformulação Direta</option>
+            <option value="Criação de Cenário">Criação de Cenário</option>
+            <option value="Abordagem Pragmática">Abordagem Pragmática</option>
+        </select><br><br>
+
+        <label for="tecnica">Técnica:</label><br>
+        <select id="tecnica" name="tecnica">
+            <option value="Sinônimos">Sinônimos</option> 
+            <option value="Reestruturação">Reestruturação</option> 
+            <option value="Expansão">Expansão</option> 
+            <option value="História Fictícia">História Fictícia</option> 
+            <option value="Analogia">Analogia</option>
+            <option value="Personificação">Personificação</option>
+            <option value="Decomposição">Decomposição</option>
+            <option value="Reformulação em Etapas">Reformulação em Etapas</option> 
+            <option value="Solicitação de Justificativa">Solicitação de Justificativa</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    {% if resposta %}
+        <h2>Resposta:</h2>
+        <p><b>Prompt usado:</b> {{ prompt_usado }}</p>
+        <p>{{ resposta }}</p>
+    {% endif %}
+</body>
+</html>
